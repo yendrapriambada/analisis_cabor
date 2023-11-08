@@ -12,6 +12,10 @@
 
 atau bisa sekalian di push (langsung di save di github secara online nya) -->
 
+<!-- oiya login duluu ke github di VS CODE NYA  -->
+
+kalau dah login kita coba lagi commit & push
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
