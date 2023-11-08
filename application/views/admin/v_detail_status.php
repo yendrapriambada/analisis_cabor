@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
+
+<!-- Misalnya aku bikin perubahan project, sedikit pun pasti akan terdetect di sini, kalau udah di save
+ -->
+<!-- Mari kita tulisa message nya -->
+
+<!-- bisa commit doang (save di local)
+
+atau bisa sekalian di push (langsung di save di github secara online nya) -->
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
