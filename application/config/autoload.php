@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','pagination','session','calendar','table','form_validation','cart');
+$autoload['libraries'] = array('database', 'pagination', 'session', 'calendar', 'table', 'form_validation', 'cart');
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url','file','form','text','date','captcha','string','html','security');
+$autoload['helper'] = array('url', 'file', 'form', 'text', 'date', 'captcha', 'string', 'html', 'security');
 
 /*
 | -------------------------------------------------------------------
@@ -133,4 +133,4 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array();
-$autoload['time_zone'] = date_default_timezone_set('Asia/Jakarta'); 
+$autoload['time_zone'] = date_default_timezone_set('Asia/Jakarta');

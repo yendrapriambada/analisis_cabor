@@ -37,10 +37,9 @@ class C_register extends CI_Controller
 			$this->load->view('auth/v_register', $data);
 		} else {
 			// check isGuest checked
-			var_dump($this->input->post('isGuest', true));
-			die;
+
 			if ($this->input->post('isGuest', true) === 'on') {
-				$roleId = 0;
+				$roleId = 3;
 				$isActive = 1;
 			} else {
 				$roleId = 2;

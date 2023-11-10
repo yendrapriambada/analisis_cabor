@@ -3,18 +3,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class C_index_user extends CI_Controller
 {
-	public function __construct(){
+	public function __construct()
+	{
 		parent::__construct();
-			
+
 		$this->load->library('form_validation');
 	}
 
 	public function beranda()
 	{
 		if (!$this->session->userdata('role_id')) {
-            redirect('auth/C_Login');
-        }
-		
+			redirect('auth/C_Login');
+		}
+
 		$data = array(
 			'title' => 'Beranda | Sport Talent Prediction',
 			'user'  =>  $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array()
