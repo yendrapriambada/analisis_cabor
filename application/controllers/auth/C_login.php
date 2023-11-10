@@ -12,6 +12,10 @@ class C_login extends CI_Controller
 
 	public function index()
 	{
+		if ($this->session->userdata('role_id')) {
+			redirect('user/C_index_user/beranda');
+		}
+
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
 			'required' => 'Email harus diisi!',
 			'valid_email' => 'Email tidak valid!'

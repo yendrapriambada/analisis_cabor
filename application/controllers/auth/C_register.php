@@ -10,6 +10,10 @@ class C_register extends CI_Controller
 	}
 	public function index()
 	{
+		if ($this->session->userdata('role_id')) {
+			redirect('user/C_index_user/beranda');
+		}
+
 		// Rules
 		$this->form_validation->set_rules('name', 'Nama Lengkap', 'required|trim', [
 			'required' => 'Nama lengkap harus diisi!'
