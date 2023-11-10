@@ -40,19 +40,31 @@
                   <input type="password" class="form-control form-control-lg" id="password2" name="password2" placeholder="Konfirmasi Password">
                   <?= form_error('password2', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
-                <!-- <div class="mb-4">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      I agree to all Terms & Conditions
-                    </label>
-                  </div>
-                </div> -->
+                <div class="mb-4">
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <label class="form-check-label text-muted">
+                            <input type="checkbox" id="isGuest" name="isGuest" class="form-check-input">
+                            Registrasi sebagai tamu&nbsp;
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <a data-toggle="tooltip" data-bs-placement="right" data-bs-title="Registrasi akun cepat, namun perhatikan bahwa fitur yang tersedia mungkin terbatas.">
+                          &#9432;
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
                 <div class="mt-3">
                   <Button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">DAFTAR AKUN</Button>
                 </div>
                 <div class="text-center mt-3 font-weight-light">
-                 Apakah anda sudah punya akun? <a href="<?php echo base_url() . 'auth/C_login' ?>" class="text-primary">Masuk</a>
+                  Apakah anda sudah punya akun? <a href="<?php echo base_url() . 'auth/C_login' ?>" class="text-primary">Masuk</a>
                 </div>
               </form>
             </div>
@@ -69,5 +81,11 @@
   <?php $this->load->view('layout/javascript') ?>
   <!-- end javascript -->
 </body>
+
+<script>
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
 
 </html>

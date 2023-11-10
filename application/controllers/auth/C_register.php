@@ -36,13 +36,23 @@ class C_register extends CI_Controller
 			);
 			$this->load->view('auth/v_register', $data);
 		} else {
+			// check isGuest checked
+			var_dump($this->input->post('isGuest', true));
+			die;
+			if ($this->input->post('isGuest', true) === 'on') {
+				$roleId = 0;
+				$isActive = 1;
+			} else {
+				$roleId = 2;
+				$isActive = 0;
+			}
 			$data = [
 				'name' => htmlspecialchars($this->input->post('name', true)),
 				'email' => htmlspecialchars($this->input->post('email', true)),
 				'image' => 'default.png',
 				'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-				'role_id' => 2,
-				'is_active' => 1,
+				'role_id' => $roleId,
+				'is_active' => $isActive,
 				'date_created' => time()
 			];
 
