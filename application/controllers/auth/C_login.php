@@ -48,7 +48,7 @@ class C_login extends CI_Controller
 					$data = [
 						'email' => $user['email'],
 						'role_id' => $user['role_id'],
-						'nama' => $user['nama']
+						'name' => $user['name']
 					];
 					$this->session->set_userdata($data);
 					redirect('user/C_index_user/beranda');

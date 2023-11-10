@@ -1,13 +1,13 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
         <li class="nav-item mt-0">
-           
-          <?php if ($this->session->userdata('role_id') == 2 || $this->session->userdata('role_id') == 1){ ?>
+
+          <?php if ($this->session->userdata('role_id') == 2 || $this->session->userdata('role_id') == 1) { ?>
             <a class="nav-link active" href="<?php echo base_url() . 'user/C_index_user/beranda' ?>">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Beranda</span>
             </a>
-          <?php } else {?>
+          <?php } else { ?>
             <a class="nav-link active" href="<?php echo base_url() . 'C_index/beranda' ?>">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Beranda</span>
@@ -63,7 +63,7 @@
               <span class="menu-title">Login</span>
             </a>
           </li>
-        <?php } else {?>
+        <?php } else { ?>
           <hr width="100%">
           <li class="nav-item mt-0">
             <a class="nav-link" href="<?php echo base_url() . 'auth/C_login/logout' ?>">

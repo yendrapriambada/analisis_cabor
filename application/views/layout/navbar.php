@@ -11,27 +11,28 @@
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <?php
-              if (isset($user) && isset($user['name'])) {
-                // If $user and $user['name'] are set, use $user['name'] as the seed for the API call.
-                $avatarUrl = "https://api.dicebear.com/7.x/initials/svg?seed=" . urlencode($user['name']);
+              if ($this->session->userdata('name') !== null) {
+                // If the 'name' session data is set, use it as the seed for the API call.
+                $avatarName = $this->session->userdata('name');
+                $avatarUrl = "https://api.dicebear.com/7.x/initials/svg?seed=" . urlencode($avatarName);
               } else {
-                // Handle the case where $user or $user['name'] is not set or null.
-                $defaultName = 'Guest';
-                $avatarUrl = "https://api.dicebear.com/7.x/initials/svg?seed=" . urlencode($defaultName);
+                // Handle the case where 'name' session data is not set.
+                $avatarName = 'Guest';
+                $avatarUrl = "https://api.dicebear.com/7.x/initials/svg?seed=" . urlencode($avatarName);
               }
+              echo $avatarName;
               ?>
-              <img src="<?php echo $avatarUrl; ?>" alt="avatar" />
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Edit Profil
-              </a>
-              <a class="dropdown-item" href="<?php echo base_url() . 'auth/C_login/logout' ?>">
-                <i class="ti-power-off text-primary"></i>
-                Logout
-              </a>
-            </div>
+              <img class="ml-2" src="<?php echo $avatarUrl; ?>" alt="avatar" />
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item">
+                  <i class="ti-settings text-primary"></i>
+                  Edit Profil
+                </a>
+                <a class="dropdown-item" href="<?php echo base_url() . 'auth/C_login/logout' ?>">
+                  <i class="ti-power-off text-primary"></i>
+                  Logout
+                </a>
+              </div>
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
