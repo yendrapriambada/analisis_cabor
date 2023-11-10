@@ -10,7 +10,17 @@
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="<?php echo base_url(); ?>assets/images/faces/face28.jpg" alt="profile" />
+              <?php
+              if (isset($user) && isset($user['name'])) {
+                // If $user and $user['name'] are set, use $user['name'] as the seed for the API call.
+                $avatarUrl = "https://api.dicebear.com/7.x/initials/svg?seed=" . urlencode($user['name']);
+              } else {
+                // Handle the case where $user or $user['name'] is not set or null.
+                $defaultName = 'Guest';
+                $avatarUrl = "https://api.dicebear.com/7.x/initials/svg?seed=" . urlencode($defaultName);
+              }
+              ?>
+              <img src="<?php echo $avatarUrl; ?>" alt="avatar" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
