@@ -40,9 +40,9 @@ class C_register extends CI_Controller
 			);
 			$this->load->view('auth/v_register', $data);
 		} else {
-			// check isGuest checked
+			// check isQuickAccess checked
 
-			if ($this->input->post('isGuest', true) === 'on') {
+			if ($this->input->post('isQuickAccess', true) === 'on') {
 				$roleId = 3;
 				$isActive = 1;
 			} else {

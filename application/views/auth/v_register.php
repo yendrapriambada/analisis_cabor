@@ -19,7 +19,7 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo">
+                <a href="<?= base_url('C_index/beranda');  ?>"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo"></a>
               </div>
               <h4>Pengguna Baru?</h4>
               <h6 class="font-weight-light">Silahkan registrasi akun baru melalui form dibawah ini.</h6>
@@ -46,13 +46,13 @@
                       <td>
                         <div class="form-check">
                           <label class="form-check-label text-muted">
-                            <input type="checkbox" id="isGuest" name="isGuest" class="form-check-input">
-                            Registrasi sebagai tamu&nbsp;
+                            <input type="checkbox" id="isQuickAccess" name="isQuickAccess" class="form-check-input">
+                            Quick Access&nbsp;
                           </label>
                         </div>
                       </td>
                       <td>
-                        <a data-toggle="tooltip" data-bs-placement="right" data-bs-title="Registrasi akun cepat, namun perhatikan bahwa fitur yang tersedia mungkin terbatas.">
+                        <a data-toggle="tooltip" data-bs-placement="right" data-bs-title="Registrasi akun cepat, namun harap perhatikan bahwa fitur yang tersedia mungkin terbatas.">
                           &#9432;
                         </a>
                       </td>

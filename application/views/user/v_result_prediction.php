@@ -39,9 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    <?php if ($this->session->userdata('role_id') == NULL ) { ?>
-                            <h3 class="text-warning"> Anda harus mendaftar akun dan login terlebih dahulu untuk melihat detail hasil prediksi</h3>
-                    <?php } else {?>
+
                     <div class="row">
                         <div class="col-md-8 grid-margin ">
                             <div class="card">
@@ -78,41 +76,45 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-title">Detail Data Anak</p>
-                                    <p class="font-weight-500 mb-4">Dibawah ini merupakan detail kemampuan anak</p>
-                                    <table class="table table-striped table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th>Aspek</th>
-                                                <th>Nilai</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Search Engine Marketing</td>
-                                                <td class="font-weight-bold">$362</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Search Engine Optimization</td>
-                                                <td class="font-weight-bold">$116</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Display Advertising</td>
-                                                <td class="font-weight-bold">$551</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pay Per Click Advertising</td>
-                                                <td class="font-weight-bold">$523</td>
-                                            </tr>
-                                            <tr>
-                                                <td>E-Mail Marketing</td>
-                                                <td class="font-weight-bold">$781</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Referral Marketing</td>
-                                                <td class="font-weight-bold">$283</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <?php if ($this->session->userdata('role_id') == NULL) { ?>
+                                        <h5 class="text-warning"> Anda harus mendaftar akun dan login terlebih dahulu untuk melihat detail lebih lengkap hasil prediksi</h5>
+                                    <?php } else { ?>
+                                        <p class="font-weight-500 mb-4">Dibawah ini merupakan detail kemampuan anak</p>
+                                        <table class="table table-striped table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th>Aspek</th>
+                                                    <th>Nilai</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Search Engine Marketing</td>
+                                                    <td class="font-weight-bold">$362</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Search Engine Optimization</td>
+                                                    <td class="font-weight-bold">$116</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Display Advertising</td>
+                                                    <td class="font-weight-bold">$551</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pay Per Click Advertising</td>
+                                                    <td class="font-weight-bold">$523</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E-Mail Marketing</td>
+                                                    <td class="font-weight-bold">$781</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Referral Marketing</td>
+                                                    <td class="font-weight-bold">$283</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -123,14 +125,17 @@
                                         <p class="card-title">Penjelasan</p>
                                         <a href="#" class="text-info">View all</a>
                                     </div>
-                                    <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
-                                    <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
-                                    <canvas id="sales-chart"></canvas>
+                                    <?php if ($this->session->userdata('role_id') == NULL) { ?>
+                                        <h5 class="text-warning"> Anda harus mendaftar akun dan login terlebih dahulu untuk melihat detail lebih lengkap hasil prediksi</h5>
+                                    <?php } else { ?>
+                                        <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                                        <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
+                                        <canvas id="sales-chart"></canvas>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
                 </div>
             </div>
             <!-- main-panel ends -->

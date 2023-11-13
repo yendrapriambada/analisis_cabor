@@ -10,7 +10,7 @@ class C_set_role extends CI_Controller
 		if (!$this->session->userdata('role_id')) {
 			redirect('auth/C_Login');
 		}
-		if (!($this->session->userdata('role_id') === 1)) {
+		if (!($this->session->userdata('role_id') == 1)) {
 			redirect('auth/C_blocked');
 		}
 

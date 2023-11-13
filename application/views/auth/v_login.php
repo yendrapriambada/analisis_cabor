@@ -19,7 +19,7 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo">
+                <a href="<?= base_url('C_index/beranda');  ?>"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo"></a>
               </div>
               <h4>Halo!</h4>
               <h6 class="font-weight-light">Silahkan Log in untuk masuk aplikasi.</h6>
