@@ -47,7 +47,7 @@
                     </div>
                   <?php } ?>
 
-                  <a class="dropdown-item">
+                  <a href="<?php echo base_url() . 'user/C_index_user/editProfil' ?>" class="dropdown-item">
                     <i class="ti-settings text-primary"></i>
                     Edit Profil
                   </a>
