@@ -33,7 +33,7 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Selamat datang "Nama Pengguna"</h3>
+                  <h3 class="font-weight-bold">Selamat datang</h3>
                   <h6 class="font-weight-normal mb-0">Aplikasi ini dapat membantu anda mengolah data dan <span class="text-primary"> memprediksi kemampuan anak </span> pada cabang olah raga tertentu</span></h6>
                 </div>
                 <div class="col-12 col-xl-4">
