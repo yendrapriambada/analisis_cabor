@@ -61,9 +61,9 @@
                         Tambah Data
                       </a>
                       &nbsp;&nbsp;&nbsp;&nbsp;
-                      <a href="#" class="btn btn-social-icon-text btn-facebook">
+                      <a href="<?= base_url() . 'anak/C_export_excel/export'?>" class="btn btn-social-icon-text btn-facebook">
                         <i class="mdi mdi-download"></i>
-                        Unduh Data
+                        Unduh Data (.xlsx)
                       </a>
                     <?php } else { ?>
                       <a data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-social-icon-text btn-dribbble">
