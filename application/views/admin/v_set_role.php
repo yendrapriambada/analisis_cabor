@@ -66,72 +66,27 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Search Engine Marketing</td>
-                          <td class="font-weight-bold">$362</td>
-                          <td>21 Sep 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-primary">Administrator</div>
-                          </td>
-                          <td>
-                            <button type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-sm btn-info">Set Peran</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Search Engine Optimization</td>
-                          <td class="font-weight-bold">$116</td>
-                          <td>13 Jun 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-success">Member</div>
-                          </td>
-                          <td>
-                            <button type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-sm btn-info">Set Peran</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Display Advertising</td>
-                          <td class="font-weight-bold">$551</td>
-                          <td>28 Sep 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-success">Member</div>
-                          </td>
-                          <td>
-                            <button type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-sm btn-info">Set Peran</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Pay Per Click Advertising</td>
-                          <td class="font-weight-bold">$523</td>
-                          <td>30 Jun 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-success">Member</div>
-                          </td>
-                          <td>
-                            <a href="#" type="button" onclick="return confirm ('Apakah Anda Yakin Akan Mengedit Peran Akun ini ?')" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-sm btn-info">Set Peran</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Referral Marketing</td>
-                          <td class="font-weight-bold">$283</td>
-                          <td>20 Mar 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-success">Member</div>
-                          </td>
-                          <td>
-                            <a href="#" type="button" onclick="return confirm ('Apakah Anda Yakin Akan Mengedit Peran Akun ini ?')" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-sm btn-info">Set Peran</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Social media marketing</td>
-                          <td class="font-weight-bold">$897</td>
-                          <td>26 Oct 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-success">Member</div>
-                          </td>
-                          <td>
-                            <a href="#" type="button" onclick="return confirm ('Apakah Anda Yakin Akan Mengedit Peran Akun ini ?')" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-sm btn-info">Set Peran</a>
-                          </td>
-                        </tr>
+                        <?php
+                        if (!empty($users)) {
+                          foreach ($users as $row) {
+                            echo "<tr>";
+                            echo "<td>" . $row["name"] . "</td>";
+                            echo "<td>" . $row["email"] . "</td>";
+                            echo "<td>" . $row["date_created"] . "</td>";
+                            if ($row["role_id"] == 1) {
+                              echo "<td><div class='badge badge-success'>" . "Administrator" . "</div></td>";
+                            } else if ($row["role_id"] == 2) {
+                              echo "<td><div class='badge badge-warning'>" . "Member" . "</div></td>";
+                            } else if ($row["role_id"] == 3) {
+                              echo "<td><div class='badge badge-secondary'>" . "Unverified User" . "</div></td>";
+                            }
+                            echo "<td><button type='button' data-toggle='modal' data-target='#exampleModalCenter' class='btn btn-sm btn-info'>Set Peran</button></td>";
+                            echo "</tr>";
+                          }
+                        } else {
+                          echo "<tr><td colspan='5'>No data found</td></tr>";
+                        }
+                        ?>
                       </tbody>
                     </table>
                   </div>
@@ -154,15 +109,22 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="exampleSelectGender">Peran</label>
-              <select class="form-control" id="exampleSelectGender">
-                <option>Administrator</option>
-                <option>Member</option>
-              </select>
+          <form method="post" action="<?= base_url('auth/C_set_role/updateRole');  ?>">
+            <input type="hidden" name="email" value="<?= $row['email']; ?>">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="exampleSelectGender">Peran</label>
+                <select class="form-control" id="exampleSelectGender" name="peran">
+
+                  <option value="1" <?php echo ($row['role_id'] == '1') ? 'selected' : ''; ?>>Administrator</option>
+                  <option value="2" <?php echo ($row['role_id'] == '2') ? 'selected' : ''; ?>>Member</option>
+                  <option value="3" <?php echo ($row['role_id'] == '3') ? 'selected' : ''; ?>>Unverified User</option>
+                </select>
+              </div>
+              <button type="submit">Simpan</button>
             </div>
-          </div>
+          </form>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>

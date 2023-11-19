@@ -49,6 +49,7 @@ class C_register extends CI_Controller
 				$roleId = 2;
 				$isActive = 0;
 			}
+
 			$data = [
 				'name' => htmlspecialchars($this->input->post('name', true)),
 				'email' => htmlspecialchars($this->input->post('email', true)),
@@ -56,7 +57,7 @@ class C_register extends CI_Controller
 				'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 				'role_id' => $roleId,
 				'is_active' => $isActive,
-				'date_created' => time()
+				'date_created' => date('Y-m-d H:i:s')
 			];
 
 			$this->db->insert('tb_user', $data);
