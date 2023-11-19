@@ -18,7 +18,7 @@ class C_register extends CI_Controller
 		$this->form_validation->set_rules('name_user', 'Nama Lengkap', 'required|trim', [
 			'required' => 'Nama lengkap harus diisi!'
 		]);
-		$this->form_validation->set_rules('email_user', 'Email', 'required|trim|valid_email|is_unique[tb_user.email]', [
+		$this->form_validation->set_rules('email_user', 'Email', 'required|trim|valid_email|is_unique[tb_user.email_user]', [
 			'required' => 'Email harus diisi!',
 			'is_unique' => 'Email sudah terdaftar!',
 			'valid_email' => 'Email tidak valid!'
@@ -51,8 +51,8 @@ class C_register extends CI_Controller
 			}
 
 			$data = [
-				'name_user' => htmlspecialchars($this->input->post('name', true)),
-				'email_user' => htmlspecialchars($this->input->post('email', true)),
+				'name_user' => htmlspecialchars($this->input->post('name_user', true)),
+				'email_user' => htmlspecialchars($this->input->post('email_user', true)),
 				'password_user' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 				'role_id' => $roleId,
 				'is_active' => $isActive,
