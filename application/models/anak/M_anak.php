@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class M_user extends CI_Model
+class M_anak extends CI_Model
 {
     public function getRecords(){
         $query = $this->db->get('tb_anak');
@@ -20,8 +20,16 @@ class M_user extends CI_Model
     }
 
     function update($id,$data){
-        $this->db->where("id",$id);
+        $this->db->where("id_anak",$id);
         $this->db->update("tb_anak",$data);
+    }
+
+    public function tampil_by_id($id)
+    {
+        $this->db->select("*");
+        $this->db->where("id_anak",$id);
+        $data = $this->db->get("tb_anak")->row();
+        return $data;
     }
 
 }

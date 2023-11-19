@@ -8,6 +8,6 @@ class C_result_prediction extends CI_Controller
         $data = array(
             'title' => 'Hasil Prediksi Cabang Olahraga | Sport Talent Prediction'
         );
-        $this->load->view('user/v_result_prediction', $data);
+        $this->load->view('analisis/v_result_prediction', $data);
     }
 }

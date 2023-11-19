@@ -15,7 +15,7 @@
           <?php } ?>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url() . 'user/C_index_user/dataAnak' ?>">
+          <a class="nav-link" href="<?php echo base_url() . 'anak/C_data_anak' ?>">
             <i class="mdi mdi-account-multiple menu-icon"></i>
             <span class="menu-title">Data Anak</span>
           </a>

@@ -18,8 +18,8 @@
               $avatarUrl = "https://api.dicebear.com/7.x/initials/svg?seed=" . urlencode($avatarName);
             }
             ?>
+            
 
-            <h4 class="mt-2"><?= $avatarName ?></h4>
             <?php
             if (!($this->session->userdata('role_id') == NULL)) {
             ?>
@@ -27,6 +27,8 @@
                 <img class="ml-2" src="<?php echo $avatarUrl; ?>" alt="avatar" />
 
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                  <p class="dropdown-item mt-2"><?= $avatarName ?></p>
+                  <hr>
                   <?php if ($this->session->userdata('role_id') == 1) { ?>
                     <div class="dropdown-item" style="display: flex; justify-content: center; align-items: center;" readonly="true">
                       <p class="badge bg-primary ml-2 mr-2 mb-0 text-white">

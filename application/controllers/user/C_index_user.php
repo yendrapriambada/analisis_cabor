@@ -23,20 +23,12 @@ class C_index_user extends CI_Controller
 		$this->load->view('user/v_index_user', $data);
 	}
 
-	public function dataAnak()
-	{
-		$data = array(
-			'title' => 'Data Anak | Sport Talent Prediction',
-		);
-		$this->load->view('user/v_data_anak', $data);
-	}
-
 	public function komparasiData()
 	{
 		$data = array(
 			'title' => 'Komparasi Data | Sport Talent Prediction',
 		);
-		$this->load->view('user/v_komparasi_data', $data);
+		$this->load->view('analisis/v_komparasi_data', $data);
 	}
 
 	public function resultKomparasi()
@@ -44,7 +36,7 @@ class C_index_user extends CI_Controller
 		$data = array(
 			'title' => 'Hasil Komparasi Data | Sport Talent Prediction',
 		);
-		$this->load->view('user/v_result_komparasi', $data);
+		$this->load->view('analisis/v_result_komparasi', $data);
 	}
 
 	public function normaPenilaian()
