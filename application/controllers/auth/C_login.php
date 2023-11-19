@@ -16,11 +16,11 @@ class C_login extends CI_Controller
 			redirect('user/C_index_user/beranda');
 		}
 
-		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
+		$this->form_validation->set_rules('email_user', 'Email', 'required|trim|valid_email', [
 			'required' => 'Email harus diisi!',
 			'valid_email' => 'Email tidak valid!'
 		]);
-		$this->form_validation->set_rules('password', 'Password', 'required|trim', [
+		$this->form_validation->set_rules('password_user', 'Password', 'required|trim', [
 			'required' => 'Password harus diisi!'
 		]);
 
@@ -38,21 +38,21 @@ class C_login extends CI_Controller
 
 	private function _login()
 	{
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
+		$emailUser = $this->input->post('email_user');
+		$password = $this->input->post('password_user');
 
-		$user = $this->db->get_where('tb_user', ['email' => $email])->row_array();
+		$user = $this->db->get_where('tb_user', ['email_user' => $emailUser])->row_array();
 
 		// jika usernya ada
 		if ($user) {
 			// jika usernya aktif
 			if ($user['is_active'] == 1) {
 				// cek password
-				if (password_verify($password, $user['password'])) {
+				if (password_verify($password, $user['password_user'])) {
 					$data = [
-						'email' => $user['email'],
+						'email_user' => $user['email_user'],
 						'role_id' => $user['role_id'],
-						'name' => $user['name']
+						'name_user' => $user['name_user']
 					];
 					$this->session->set_userdata($data);
 					redirect('user/C_index_user/beranda');
@@ -72,9 +72,9 @@ class C_login extends CI_Controller
 
 	public function logout()
 	{
-		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('email_user');
 		$this->session->unset_userdata('role_id');
-		$this->session->unset_userdata('nama');
+		$this->session->unset_userdata('nama_user');
 		$this->session->sess_destroy();
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda berhasil logout!</div>');
 		redirect('auth/C_login');

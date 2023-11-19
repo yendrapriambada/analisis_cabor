@@ -18,7 +18,7 @@ class C_index_user extends CI_Controller
 
 		$data = array(
 			'title' => 'Beranda | Sport Talent Prediction',
-			'user'  =>  $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array()
+			'user'  =>  $this->db->get_where('tb_user', ['email_user' => $this->session->userdata('email_user')])->row_array()
 		);
 		$this->load->view('user/v_index_user', $data);
 	}
@@ -83,9 +83,9 @@ class C_index_user extends CI_Controller
 	{
 		$data = array(
 			'title' => 'Edit Profil | Sport Talent Prediction',
-			'user' => $this->db->get_where('tb_user', ['email' => $this->session->userdata['email']])->row_array()
+			'user' => $this->db->get_where('tb_user', ['email_user' => $this->session->userdata['email_user']])->row_array()
 		);
-		$this->form_validation->set_rules('name', 'Nama Lengkap', 'required|trim');
+		$this->form_validation->set_rules('name_user', 'Nama Lengkap', 'required|trim');
 		// $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tb_user.email]', [
 		// 	'is_unique' => 'Email ini sudah terdaftar!'
 		// ]);
@@ -93,15 +93,15 @@ class C_index_user extends CI_Controller
 		if ($this->form_validation->run() == false) {
 			$this->load->view('user/v_edit_profil', $data);
 		} else {
-			$name = $this->input->post('name');
-			$email = $this->input->post('email');
+			$nameUser = $this->input->post('name_user');
+			$emailUser = $this->input->post('email_user');
 
-			$this->db->set('name', $name);
-			$this->db->where('email', $email);
+			$this->db->set('name_user', $nameUser);
+			$this->db->where('email_user', $emailUser);
 			$this->db->update('tb_user');
 
 			$data = [
-				'name' => $name
+				'name_user' => $nameUser
 			];
 			$this->session->set_userdata($data);
 

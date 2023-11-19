@@ -25,11 +25,11 @@
               <h6 class="font-weight-light">Silahkan registrasi akun baru melalui form dibawah ini.</h6>
               <form class="pt-3" method="post" action="<?= base_url('auth/C_register'); ?>">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="name" name="name" value="<?= set_value('name') ?>" placeholder="Nama Lengkap">
+                  <input type="text" class="form-control form-control-lg" id="name_user" name="name_user" value="<?= set_value('name_user') ?>" placeholder="Nama Lengkap">
                   <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="email" name="email" value="<?= set_value('email') ?>" placeholder="Email">
+                  <input type="text" class="form-control form-control-lg" id="email" name="email_user" value="<?= set_value('email_user') ?>" placeholder="Email">
                   <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
