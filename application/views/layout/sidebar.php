@@ -29,7 +29,7 @@
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url() . 'user/C_index_user/normaPenilaian' ?>">
             <i class="mdi mdi-file-check menu-icon"></i>
-            <span class="menu-title">Norma Penilaian</span>
+            <span class="menu-title">Karakteristik Penilaian</span>
           </a>
         </li>
         <li class="nav-item">
