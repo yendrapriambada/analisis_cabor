@@ -56,7 +56,7 @@
                   <div class="card card-tale">
                     <div class="card-body">
                       <p class="mb-4">Total Data Anak</p>
-                      <p class="fs-30 mb-2">4006</p>
+                      <p class="fs-30 mb-2"><?= $jmlDataAnak?></p>
                     </div>
                   </div>
                 </div>
@@ -64,7 +64,7 @@
                   <div class="card card-dark-blue">
                     <div class="card-body">
                       <p class="mb-4">Total Anak Laki-Laki</p>
-                      <p class="fs-30 mb-2">2006</p>
+                      <p class="fs-30 mb-2"><?= $jmlDataAnakLakiLaki?></p>
                     </div>
                   </div>
                 </div>
@@ -72,7 +72,7 @@
                   <div class="card card-light-danger">
                     <div class="card-body">
                       <p class="mb-4">Total Anak Perempuan</p>
-                      <p class="fs-30 mb-2">2000</p>
+                      <p class="fs-30 mb-2"><?= $jmlDataAnakPerempuan?></p>
                     </div>
                   </div>
                 </div>

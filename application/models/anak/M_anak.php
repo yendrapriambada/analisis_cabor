@@ -38,4 +38,20 @@ class M_anak extends CI_Model
         return $data;
     }
 
+    public function jumlahDataLakiLaki()
+    {
+        $this->db->from('tb_anak');
+        $this->db->where('jenis_kelamin_anak', '1');
+        $data = $this->db->count_all_results();
+        return $data;
+    }
+
+    public function jumlahDataPerempuan()
+    {
+        $this->db->from('tb_anak');
+        $this->db->where('jenis_kelamin_anak', '2');
+        $data = $this->db->count_all_results();
+        return $data;
+    }
+
 }

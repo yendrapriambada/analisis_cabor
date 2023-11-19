@@ -8,6 +8,7 @@ class C_index_user extends CI_Controller
 		parent::__construct();
 
 		$this->load->library('form_validation');
+		$this->load->model("anak/M_anak","",TRUE);
 	}
 
 	public function beranda()
@@ -18,7 +19,11 @@ class C_index_user extends CI_Controller
 
 		$data = array(
 			'title' => 'Beranda | Sport Talent Prediction',
-			'user'  =>  $this->db->get_where('tb_user', ['email_user' => $this->session->userdata('email_user')])->row_array()
+			'user'  =>  $this->db->get_where('tb_user', ['email_user' => $this->session->userdata('email_user')])->row_array(),
+			'jmlDataAnak' => $this->M_anak->jumlahData(),
+			'jmlDataAnakLakiLaki' => $this->M_anak->jumlahDataLakiLaki(),
+			'jmlDataAnakPerempuan' => $this->M_anak->jumlahDataPerempuan(),
+
 		);
 		$this->load->view('user/v_index_user', $data);
 	}
