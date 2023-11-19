@@ -10,8 +10,8 @@
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <?php
-            if ($this->session->userdata('name') !== null) {
-              $avatarName = $this->session->userdata('name');
+            if ($this->session->userdata('name_user') !== null) {
+              $avatarName = $this->session->userdata('name_user');
               $avatarUrl = "https://api.dicebear.com/7.x/initials/svg?seed=" . urlencode($avatarName);
             } else {
               $avatarName = 'Guest';

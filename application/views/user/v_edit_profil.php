@@ -41,12 +41,12 @@
                                     <?= form_open_multipart('user/C_index_user/editProfil'); ?>
                                     <div class="form-group">
                                         <label for="nama">Email</label><span class="text-danger">*</span>
-                                        <input type="text" class="form-control" name="email" id="email" value="<?= $user['email'] ?>" readonly>
+                                        <input type="text" class="form-control" name="email_user" id="email_user" value="<?= $user['email_user'] ?>" readonly>
                                         <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Nama Lengkap</label><span class="text-danger">*</span>
-                                        <input type="text" class="form-control" name="name" id="name" value="<?= $user['name'] ?>">
+                                        <input type="text" class="form-control" name="name_user" id="name_user" value="<?= $user['name_user'] ?>">
                                         <?= form_error('name', '<small class="text-danger">', '</small>'); ?>
                                     </div>
                                     <!-- <div class="form-group">

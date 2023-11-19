@@ -28,11 +28,11 @@
 
               <form class="pt-3" method="post" action="<?= base_url('auth/C_login');  ?>">
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="email" name="email" value="<?= set_value('email') ?>" placeholder="Email">
+                  <input type="email" class="form-control form-control-lg" id="email_user" name="email_user" value="<?= set_value('email') ?>" placeholder="Email">
                   <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Password">
+                  <input type="password" class="form-control form-control-lg" id="password_user" name="password_user" placeholder="Password">
                   <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="mt-3">

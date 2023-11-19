@@ -70,8 +70,8 @@
                         if (!empty($users)) {
                           foreach ($users as $row) {
                             echo "<tr>";
-                            echo "<td>" . $row["name"] . "</td>";
-                            echo "<td>" . $row["email"] . "</td>";
+                            echo "<td>" . $row["name_user"] . "</td>";
+                            echo "<td>" . $row["email_user"] . "</td>";
                             echo "<td>" . $row["date_created"] . "</td>";
                             if ($row["role_id"] == 1) {
                               echo "<td><div class='badge badge-success'>" . "Administrator" . "</div></td>";
@@ -80,14 +80,59 @@
                             } else if ($row["role_id"] == 3) {
                               echo "<td><div class='badge badge-secondary'>" . "Unverified User" . "</div></td>";
                             }
-                            echo "<td><button type='button' data-toggle='modal' data-target='#exampleModalCenter' class='btn btn-sm btn-info'>Set Peran</button></td>";
+                            echo "<td><button type='button' data-toggle='modal' data-target='#modal-" . $row["id_user"] . "' class='btn btn-sm btn-info'>Set Peran</button></td>";
                             echo "</tr>";
+
+                        ?>
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal-<?= $row["id_user"] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Ubah Peran User</h5>
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <form method="post" action="<?= base_url('admin/C_set_role/updateRole');  ?>">
+                                    <input type="hidden" name="id_user" value="<?= $row['id_user']; ?>">
+                                    <div class="modal-body">
+                                      <div class="form-group">
+                                        <label for="exampleSelectGender">Peran</label>
+                                        <select class="form-control" id="exampleSelectGender" name="role_id">
+                                          <option value="1" <?php echo ($row['role_id'] == '1') ? 'selected' : ''; ?>>Administrator</option>
+                                          <option value="2" <?php echo ($row['role_id'] == '2') ? 'selected' : ''; ?>>Member</option>
+                                          <option value="3" <?php echo ($row['role_id'] == '3') ? 'selected' : ''; ?>>Unverified User</option>
+                                        </select>
+                                      </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                                      <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                        <?php
                           }
                         } else {
                           echo "<tr><td colspan='5'>No data found</td></tr>";
                         }
                         ?>
                       </tbody>
+
+                      <?php
+                      if (!empty($users)) {
+                        foreach ($users as $row) {
+                      ?>
+
+                      <?php
+                        }
+                      }
+                      ?>
                     </table>
                   </div>
                 </div>
@@ -99,39 +144,6 @@
       <!-- page-body-wrapper ends -->
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Ubah Peran User</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form method="post" action="<?= base_url('auth/C_set_role/updateRole');  ?>">
-            <input type="hidden" name="email" value="<?= $row['email']; ?>">
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="exampleSelectGender">Peran</label>
-                <select class="form-control" id="exampleSelectGender" name="peran">
-
-                  <option value="1" <?php echo ($row['role_id'] == '1') ? 'selected' : ''; ?>>Administrator</option>
-                  <option value="2" <?php echo ($row['role_id'] == '2') ? 'selected' : ''; ?>>Member</option>
-                  <option value="3" <?php echo ($row['role_id'] == '3') ? 'selected' : ''; ?>>Unverified User</option>
-                </select>
-              </div>
-              <button type="submit">Simpan</button>
-            </div>
-          </form>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- container-scroller -->
 
     <!-- javascript -->

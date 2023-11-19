@@ -29,11 +29,11 @@ class C_set_role extends CI_Controller
 
 	public function updateRole()
 	{
-		$email = $this->input->post('email');
-		$roleId = $this->input->post('roleId');
+		$idUser = $this->input->post('id_user');
+		$roleId = $this->input->post('role_id');
 
 		$this->db->set('role_id', $roleId);
-		$this->db->where('email', $email);
+		$this->db->where('id_user', $idUser);
 		$this->db->update('tb_user');
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Peran user berhasil diubah!</div>');
