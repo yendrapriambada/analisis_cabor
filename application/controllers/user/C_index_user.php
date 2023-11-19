@@ -23,22 +23,6 @@ class C_index_user extends CI_Controller
 		$this->load->view('user/v_index_user', $data);
 	}
 
-	public function komparasiData()
-	{
-		$data = array(
-			'title' => 'Komparasi Data | Sport Talent Prediction',
-		);
-		$this->load->view('analisis/v_komparasi_data', $data);
-	}
-
-	public function resultKomparasi()
-	{
-		$data = array(
-			'title' => 'Hasil Komparasi Data | Sport Talent Prediction',
-		);
-		$this->load->view('analisis/v_result_komparasi', $data);
-	}
-
 	public function normaPenilaian()
 	{
 		$data = array(

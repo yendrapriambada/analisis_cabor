@@ -21,7 +21,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url() . 'user/C_index_user/komparasiData' ?>">
+          <a class="nav-link" href="<?php echo base_url() . 'analisis/C_komparasi_data/komparasiData' ?>">
             <i class="mdi mdi-chart-bar menu-icon"></i>
             <span class="menu-title">Komparasi Data</span>
           </a>

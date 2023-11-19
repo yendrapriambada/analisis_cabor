@@ -32,4 +32,10 @@ class M_anak extends CI_Model
         return $data;
     }
 
+    public function jumlahData()
+    {
+        $data = $this->db->count_all('tb_anak');
+        return $data;
+    }
+
 }

@@ -35,36 +35,37 @@
               <div class="row">
                 <div class="col-12 mb-4 mb-xl-0">
                   <h3 class="font-weight-bold">Komparasi Statistik Data</h3>
-                  <p class="mt-2">Pilih Cabang Olahraga dan anak yang akan di komparasi</p>
+                  <p class="mt-2">Pilih Cabang Olahraga dan jumlah anak yang akan di komparasi</p>
+                  <p class="text-danger">Jumlah minimal anak yang dikomparasi adalah 2 orang dan maksimal tidak melebihi jumlah data anak</p>
                 </div>
               </div>
             </div>
           </div>
-          <form method="post" action="<?= base_url('user/C_index_user/resultKomparasi'); ?>" class="form-simple">
+
+          <!-- Alert -->
+          <?php if ($this->session->flashdata('ver') == 'TRUE') { ?>
+              <div class="alert alert-<?=$this->session->flashdata('class_alert');?> alert-dismissible fade show" role="alert">
+                  <?php echo $this->session->flashdata('alert'); ?>
+                  <?php $this->session->set_flashdata('ver',"FALSE");?>
+              </div>
+          <?php } ?>
+          <!-- /alert -->
+
+          <form method="post" action="<?= base_url('analisis/C_komparasi_data/pilih_anak'); ?>" class="form-simple">
             <div class="form-group">
               <label for="cabang_olahraga">Cabang Olahraga</label><span class="text-danger">*</span>
-              <select class="form-control" name="cabang_olahraga" id="cabang_olahraga">
+              <select class="form-control" name="cabang_olahraga" id="cabang_olahraga" required>
                 <option value="">Pilih Cabang Olahraga</option>
-                <option value="">Sepak Bola</option>
-                <option value="">Badminton</option>
-                <option value="">Tennis meja</option>
+                <?php foreach ($records as $d) { ?>
+                  <option value="<?= $d->id_cabor?>"><?= $d->nama_cabor?></option>
+                <?php } ?>
               </select>
             </div>
             <div class="form-group">
-              <label for="anak_1">Anak Ke-1</label><span class="text-danger">*</span>
-              <select class="form-control" name="anak_1" id="anak_1">
-                <option value="">Pilih anak ke-1</option>
-              </select>
+              <label for="jumlah_anak">Jumlah Anak</label><span class="text-danger">*</span>
+              <input type="number" name="jumlah_anak" id="jumlah_anak" class="form-control" placeholder="Jumlah anak yang akan di komparasi" required>
             </div>
-            <div class="form-group">
-              <label for="anak_2">Anak Ke-2</label><span class="text-danger">*</span>
-              <select class="form-control" name="anak_2" id="anak_2">
-                <option value="">Pilih Anak Ke-2</option>
-              </select>
-            </div>
-            <div class="d-flex">
-              <button type="submit" class="btn btn-primary mr-2 ml-auto">Komparasi</button>
-            </div>
+            <button type="submit" class="btn btn-primary mr-2 ml-auto">Pilih Anak</button>
           </form>
         </div>
       </div>
