@@ -22,7 +22,7 @@ class C_set_role extends CI_Controller
 	{
 		$data = array(
 			'title' => 'Set Role User | Sport Talent Prediction',
-			'users' => $this->M_user->getAllUser() // Access the M_user model
+			'users' => $this->M_user->getRecords() // Access the M_user model
 		);
 		$this->load->view('admin/v_set_role', $data);
 	}

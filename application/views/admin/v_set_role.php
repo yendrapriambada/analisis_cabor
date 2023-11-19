@@ -70,22 +70,22 @@
                         if (!empty($users)) {
                           foreach ($users as $row) {
                             echo "<tr>";
-                            echo "<td>" . $row["name_user"] . "</td>";
-                            echo "<td>" . $row["email_user"] . "</td>";
-                            echo "<td>" . $row["date_created"] . "</td>";
-                            if ($row["role_id"] == 1) {
+                            echo "<td>" . $row->name_user . "</td>";
+                            echo "<td>" . $row->email_user . "</td>";
+                            echo "<td>" . $row->date_created . "</td>";
+                            if ($row->role_id == 1) {
                               echo "<td><div class='badge badge-success'>" . "Administrator" . "</div></td>";
-                            } else if ($row["role_id"] == 2) {
+                            } else if ($row->role_id == 2) {
                               echo "<td><div class='badge badge-warning'>" . "Member" . "</div></td>";
-                            } else if ($row["role_id"] == 3) {
+                            } else if ($row->role_id == 3) {
                               echo "<td><div class='badge badge-secondary'>" . "Unverified User" . "</div></td>";
                             }
-                            echo "<td><button type='button' data-toggle='modal' data-target='#modal-" . $row["id_user"] . "' class='btn btn-sm btn-info'>Set Peran</button></td>";
+                            echo "<td><button type='button' data-toggle='modal' data-target='#modal-" . $row->id_user . "' class='btn btn-sm btn-info'>Set Peran</button></td>";
                             echo "</tr>";
 
                         ?>
                             <!-- Modal -->
-                            <div class="modal fade" id="modal-<?= $row["id_user"] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal fade" id="modal-<?= $row->id_user ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
@@ -96,14 +96,14 @@
                                     </button>
                                   </div>
                                   <form method="post" action="<?= base_url('admin/C_set_role/updateRole');  ?>">
-                                    <input type="hidden" name="id_user" value="<?= $row['id_user']; ?>">
+                                    <input type="hidden" name="id_user" value="<?= $row->id_user; ?>">
                                     <div class="modal-body">
                                       <div class="form-group">
                                         <label for="exampleSelectGender">Peran</label>
                                         <select class="form-control" id="exampleSelectGender" name="role_id">
-                                          <option value="1" <?php echo ($row['role_id'] == '1') ? 'selected' : ''; ?>>Administrator</option>
-                                          <option value="2" <?php echo ($row['role_id'] == '2') ? 'selected' : ''; ?>>Member</option>
-                                          <option value="3" <?php echo ($row['role_id'] == '3') ? 'selected' : ''; ?>>Unverified User</option>
+                                          <option value="1" <?php echo ($row->role_id == '1') ? 'selected' : ''; ?>>Administrator</option>
+                                          <option value="2" <?php echo ($row->role_id == '2') ? 'selected' : ''; ?>>Member</option>
+                                          <option value="3" <?php echo ($row->role_id == '3') ? 'selected' : ''; ?>>Unverified User</option>
                                         </select>
                                       </div>
                                     </div>
