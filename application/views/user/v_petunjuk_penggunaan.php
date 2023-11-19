@@ -42,25 +42,90 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Menu</th>
+                                            <th></th>
+                                            <th>Deskripsi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Menu Registrasi</td>
+                                            <td>: </td>
+                                                <td>Digunakan untuk membuat akun baru yang akan anda gunakan pada sistem aplikasi website ini</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Menu Login</td>
+                                            <td>: </td>
+                                                <td>Digunakan untuk masuk pada sistem aplikasi website dengan akun yang anda miliki</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Menu Lupa Password</td>
+                                            <td>: </td>
+                                                <td>Digunakan untuk mengubah password akun anda</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Menu Beranda</td>
+                                            <td>: </td>
+                                                <td>Halaman utama sistem aplikasi</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Menu Data Anak</td>
+                                            <td>: </td>
+                                                <td>Halaman untuk memasukan data anak baru, mengedit data anak, menghapus data anak, mengunduh data anak, dan melakukan analisis prediksi kemampuan cabang olahraga anak</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Menu Komparasi Data</td>
+                                            <td>: </td>
+                                                <td>Halaman untuk melakukan perbandingan beberapa data anak berdasarkan cabang olah raga</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Menu Karakteristik Penilaian</td>
+                                            <td>: </td>
+                                                <td>Halaman yang menampilkan beberapa karakteristik penilaian yang digunakan dalam proses analisis data setiap cabang olahraga</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Menu Panduan Penelitian</td>
+                                            <td>: </td>
+                                                <td>Halaman yang menjelaskan langkah penelitian yang dilakukan melalui sistem aplikasi website ini</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Menu Petunjuk Penggunaan</td>
+                                            <td>: </td>
+                                                <td>Halaman yang menjelaskan panduan dan deskripsi setiap menu pada sistem aplikasi website ini</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>Menu Profil Peneliti</td>
+                                            <td>: </td>
+                                                <td>Halaman yang menunjukkan data-data peneliti</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td>Menu Edit Profil</td>
+                                            <td>: </td>
+                                                <td>Digunakan untuk mengubah data akun user anda</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>Menu Ubah Password</td>
+                                            <td>: </td>
+                                                <td>Digunakan untuk mengubah password akun login anda</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
