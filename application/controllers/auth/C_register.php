@@ -60,7 +60,7 @@ class C_register extends CI_Controller
 			];
 
 			$this->db->insert('tb_user', $data);
-			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Akun anda berhasil dibuat. Silahkan login.</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akun anda berhasil dibuat. Mohon cek secara berkala email verifikasi untuk aktifkan akun.</div>');
 			redirect('auth/C_login');
 		}
 	}

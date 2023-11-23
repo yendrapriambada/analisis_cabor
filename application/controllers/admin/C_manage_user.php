@@ -15,12 +15,14 @@ class C_manage_user extends CI_Controller
 		}
 
 		$this->load->library('form_validation');
+		$this->load->model('user/M_user');
 	}
 
 	public function index()
 	{
 		$data = array(
-			'title' => 'Manage User | Sport Talent Prediction'
+			'title' => 'Manage User | Sport Talent Prediction',
+			'users' => $this->M_user->getRecords() // Access the M_user model
 		);
 		$this->load->view('admin/v_manage_user', $data);
 	}

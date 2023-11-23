@@ -61,7 +61,7 @@ class C_lupa_password extends CI_Controller
 
         if ($type == 'verify') {
             $this->email->subject('Account Verification');
-            $this->email->message('Click this link to verify you account : <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email_user') . '&token=' . urlencode($token) . '">Activate</a>');
+            $this->email->message('Click this link to verify you account : <a href="' . base_url() . 'admin/C_detail_status/verify?email=' . $this->input->post('email_user') . '&token=' . urlencode($token) . '">Activate</a>');
         } else if ($type == 'forgot') {
             $this->email->subject('Reset Password');
             $this->email->message('Klik link ini untuk reset password akun anda : <a href="' . base_url() . 'auth/C_lupa_password/resetPassword?email=' . $this->input->post('email_user') . '&token=' . urlencode($token) . '">Reset Password</a>');

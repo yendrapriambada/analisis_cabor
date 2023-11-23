@@ -66,72 +66,40 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Search Engine Marketing</td>
-                          <td class="font-weight-bold">$362</td>
-                          <td>21 Sep 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-success">Aktif</div>
-                          </td>
-                          <td>
-                            <a type="button" href="<?= base_url() . 'admin/C_detail_status' ?>" class="btn btn-sm btn-info">Lihat Progress</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Search Engine Optimization</td>
-                          <td class="font-weight-bold">$116</td>
-                          <td>13 Jun 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-danger">Tidak Aktif</div>
-                          </td>
-                          <td>
-                            <a type="button" href="<?= base_url() . 'admin/C_detail_status' ?>" class="btn btn-sm btn-info">Lihat Progress</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Display Advertising</td>
-                          <td class="font-weight-bold">$551</td>
-                          <td>28 Sep 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-warning">Menunggu Aktivasi Akun</div>
-                          </td>
-                          <td>
-                            <a type="button" href="<?= base_url() . 'admin/C_detail_status' ?>" class="btn btn-sm btn-info">Lihat Progress</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Pay Per Click Advertising</td>
-                          <td class="font-weight-bold">$523</td>
-                          <td>30 Jun 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-secondary">Verifikasi Email</div>
-                          </td>
-                          <td>
-                            <a type="button" href="<?= base_url() . 'admin/C_detail_status' ?>" class="btn btn-sm btn-info">Lihat Progress</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Referral Marketing</td>
-                          <td class="font-weight-bold">$283</td>
-                          <td>20 Mar 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-danger">Tidak Aktif</div>
-                          </td>
-                          <td>
-                            <a type="button" href="<?= base_url() . 'admin/C_detail_status' ?>" class="btn btn-sm btn-info">Lihat Progress</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Social media marketing</td>
-                          <td class="font-weight-bold">$897</td>
-                          <td>26 Oct 2018</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-success">Aktif</div>
-                          </td>
-                          <td>
-                            <a type="button" href="<?= base_url() . 'admin/C_detail_status' ?>" class="btn btn-sm btn-info">Lihat Progress</a>
-                          </td>
-                        </tr>
+                        <?php
+                        if (!empty($users)) :
+                          foreach ($users as $row) : ?>
+                            <tr>
+                              <td><?= $row->name_user ?></td>
+                              <td><?= $row->email_user ?></td>
+                              <td><?= $row->date_created ?></td>
+                              <?php
+                              if ($row->progres_aktivasi_user == 1) {
+                                echo "<td><div class='badge badge-secondary text-white'>" . "Konfirmasi Akun" . "</div></td>";
+                              } else if ($row->progres_aktivasi_user == 2) {
+                                echo "<td><div class='badge badge-warning'>" . "Verifikasi Akun" . "</div></td>";
+                              } else if ($row->progres_aktivasi_user == 3) {
+                                echo "<td><div class='badge badge-warning'>" . "Verifikasi Akun" . "</div></td>";
+                              } else if ($row->progres_aktivasi_user == 4) {
+                                echo "<td><div class='badge badge-info'>" . "Aktivasi Akun" . "</div></td>";
+                              } else if ($row->progres_aktivasi_user == 5) {
+                                if ($row->is_active == 1) {
+                                  echo "<td><div class='badge badge-success'>" . "Akun Aktif" . "</div></td>";
+                                } else {
+                                  echo "<td><div class='badge badge-danger'>" . "Akun Tidak Aktif" . "</div></td>";
+                                }
+                              }
+                              ?>
+                              <td><a href="<?= base_url() . 'admin/C_detail_status/progress/' . $row->id_user ?>" class='btn btn-sm btn-info'>Lihat Progres</a></td>
+                            </tr>
+                          <?php endforeach;
+                        else : ?>
+                          <tr>
+                            <td colspan='5'>No data found</td>
+                          </tr>
+                        <?php
+                        endif;
+                        ?>
                       </tbody>
                     </table>
                   </div>

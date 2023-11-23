@@ -123,16 +123,6 @@
                         }
                         ?>
                       </tbody>
-
-                      <?php
-                      if (!empty($users)) {
-                        foreach ($users as $row) {
-                      ?>
-
-                      <?php
-                        }
-                      }
-                      ?>
                     </table>
                   </div>
                 </div>
