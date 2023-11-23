@@ -173,7 +173,7 @@ class C_detail_status extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akun user berhasil diaktivasi!</div>');
         } else {
             $this->_sendEmail('deactivated', 'deactivated');
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akun user tidak diaktivasi!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun user tidak diaktivasi!</div>');
         }
 
         redirect('admin/C_detail_status/progress/' . $id);
